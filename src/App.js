@@ -11,7 +11,7 @@ import Rank from './components/Rank/Rank';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: '8e49e31d404b44a68e7a6513c11e48fd'
  });
 
 const particlesOptions = {
@@ -47,6 +47,7 @@ class App extends Component {
       isSignedIn : false
     }
   }
+
   calculateFaceLocation = (data) => {
     const clarifaiFace =  data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
