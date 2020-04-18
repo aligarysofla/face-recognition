@@ -29,16 +29,11 @@ class Signin extends React.Component{
             })
           })
         .then(response => response.json())
-        .then(data => {
-           //console.log('data display testing by Abbass');
-           //console.log(data);
-            if(data === 'success'){
-
+        .then(user=> {
+            if(user.id){
+                this.props.loadUser(user);
                 this.props.onRouteChange('home');
-            } else {
-                console.log('not founddddd');
-            }    
-            
+            } 
        })
         
     }
